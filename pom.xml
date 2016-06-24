@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.throwawaycode</groupId>
-	<artifactId>mongo-exclusion</artifactId>
+	<artifactId>mongo-exclusion-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>mongo-exclusion</name>
@@ -12,7 +12,6 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.3.5.RELEASE</version>
 		<relativePath/>
-		<!-- lookup parent from repository -->
 	</parent>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -79,6 +78,7 @@
 	<profiles>
 		<profile>
 			<id>mongo-driver-2x</id>
+			<!-- this profile should induce a failure upon packaging due to enforcer plugin -->
 			<properties>
 				<mongo.driver.version>2.13.3</mongo.driver.version>
 			</properties>
